@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-query.css" />
+    <!-- Link Icon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Dazzle</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <a href="#" class="logo">Dazzle</a>
+      <ul class="nav">
+        <li><a href="#">New</a></li>
+        <li><a href="#">Clothing</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <!-- Header Container -->
+      <div class="header-container">
+        <!-- Login-Register Btns -->
+        <div class="login-register-btns">
+          <button class="login-btn" onclick="showLogin()">Login</button>
+          <button class="register-btn" onclick="showRegister()">
+            Register
+          </button>
+        </div>
+
+        <!-- Mobile Btn -->
+        <div class="mobile-menu-btn">
+          <button class="mobile-btn" onclick="showMenu()">
+            <ion-icon class="mobile-btn" name="menu-outline"></ion-icon>
+          </button>
+        </div>
+
+        <!-- Bag -->
+        <div class="h-icons">
+          <div class="quantity-cart">
+            <ion-icon name="bag-outline" id="cart-icon"></ion-icon>
+            <input type="text" id="qtyBox" value="0" readonly="readonly" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bag Open -->
+      <div class="cart">
+        <h2 class="cart-title">Your Bag</h2>
+        <!-- Content -->
+        <div class="cart-content"></div>
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
+        </div>
+        <!-- Buy Button -->
+        <button type="button" class="btn-buy">Buy Now</button>
+        <!-- Bag Close -->
+        <i class="bx bx-x" id="close-cart"></i>
+      </div>
+    </header>
+
+    <!-- MOBILE -->
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-link">New</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Clothing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Explore</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-login-register">
+        <button class="login-btn" onclick="showLogin()">Login</button>
+        <button class="register-btn" onclick="showRegister()">Register</button>
+      </div>
+    </div>
+
+    <!-- HOME -->
+    <section class="home" id="home">
+      <!-- Home Text -->
+      <div class="home-text">
+        <h1>Unleash</h1>
+        <p>Your Style with Our Trendy Threads</p>
+        <button class="discovery-btn">Discovery</button>
+      </div>
+
+      <!-- Login-Register Wrapper -->
+      <div class="wrapper">
+        <span class="icon-close" onclick="closeButton()"
+          ><ion-icon name="close"></ion-icon
+        ></span>
+
+        <div class="form-box login">
+          <h2>Login</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required />
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox" /> Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button class="btn-submit" type="submit" class="btn">Login</button>
+            <div class="login-register">
+              <p>
+                Don't have an account?
+                <a href="#" class="register-link" onclick="showRegister()"
+                  >Register</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <h2>Registration</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required />
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required />
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label
+                ><input type="checkbox" /> I agree to the terms &
+                conditions</label
+              >
+            </div>
+            <button class="btn-submit" type="submit" class="btn">
+              Register
+            </button>
+            <div class="login-register">
+              <p>
+                Already have an account?
+                <a href="#" class="login-link" onclick="showLogin()">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIRCLES -->
+    <section class="circles">
+      <div class="circles_container">
+        <div class="circle-item">
+          <ion-icon class="circle-icon" name="car-outline"></ion-icon>
+          <h5 class="circle-text free-text">Free Delivery From $ 150</h5>
+        </div>
+        <div class="circle-item">
+          <ion-icon class="circle-icon" name="wallet-outline"></ion-icon>
+          <h5 class="circle-text money-text">Money Back Guaranteed</h5>
+        </div>
+        <div class="circle-item">
+          <ion-icon class="circle-icon" name="lock-closed-outline"></ion-icon>
+          <h5 class="circle-text secure-text">Secure Payment</h5>
+        </div>
+        <div class="circle-item">
+          <ion-icon class="circle-icon" name="checkbox-outline"></ion-icon>
+          <h5 class="circle-text authenticity-text">Authenticity 100%</h5>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <div class="featured-container">
+        <div class="featured-item">
+          <a href="#"><img src="images/f-watch.jpg" /></a>
+        </div>
+        <div class="featured-item">
+          <a href="#"><img src="images/f-bag.jpg" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE -->
+    <!-- Store Menu -->
+    <section class="store" id="skip-section">
+      <div class="filter-btns" id="#element1">
+        <button type="button" class="filter-btn" id="all">All</button>
+        <button type="button" class="filter-btn" id="shoes">Shoes</button>
+        <button type="button" class="filter-btn" id="bags">Bags</button>
+        <button type="button" class="filter-btn" id="shirts">Shirts</button>
+        <button type="button" class="filter-btn" id="dresses">Dresses</button>
+      </div>
+
+      <!-- Stoer Itens -->
+      <div class="filter-items">
+        <!-- Shirts -->
+        <!-- Box 1 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-1.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Lutum Shirt</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$110</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Caeruleam Gerit</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$125</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-3.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Musco Viridi Shirt</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$85</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Purpura Purpurea</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$95</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 5 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-5.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Lux Beige Shirt</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$60</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 6 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-6.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Viridis Cultus Shirt</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$70</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 7 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-7.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Lutum Brunneis Shirt</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star-half-outline"></ion-icon>
+          <br />
+          <span class="price">$65</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 8 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-8.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Nigrum Hyacintho Shirt</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$55</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 9 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-9.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Medium Caeruleum</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star-half-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$45</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 10 -->
+        <div class="filter-item all shirts add-cart-item">
+          <img src="images/shirts/shirt-10.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Beige Rosea Shirt</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$40</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Dresses -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-1.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Basic Veste Nigra</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$150</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Viridi-v Collo Veste</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star-half-outline"></ion-icon>
+          <br />
+          <span class="price">$90</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-3.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Classe Caeruleo</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$125</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Beige Habitu</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$80</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 5 -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-5.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Medii Aevi Viridis</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$90</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 6 -->
+        <div class="filter-item all dresses add-cart-item">
+          <img src="images/dresses/dress-6.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Lux Beige Habitu</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star-half-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$60</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Shoes -->
+        <div class="filter-item all shoes add-cart-item">
+          <img src="images/shoes/shoe-1.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Nigrum Calceamentum</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$120</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="filter-item all shoes add-cart-item">
+          <img src="images/shoes/shoe-2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Deliciae Brunneis Calceus</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$150</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="filter-item all shoes add-cart-item">
+          <img src="images/shoes/shoe-3.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Calceus Cotidie Usus</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$90</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="filter-item all shoes add-cart-item">
+          <img src="images/shoes/shoe-4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Blue Sneakers</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$85</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+
+        <!-- Bags -->
+        <div class="filter-item all bags add-cart-item">
+          <img src="images/bags/bag-1.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Nigrum Pera</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$150</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 2 -->
+        <div class="filter-item all bags add-cart-item">
+          <img src="images/bags/bag-2.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Tabula Sacculi</h2>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <ion-icon class="star" name="star-outline"></ion-icon>
+          <br />
+          <span class="price">$140</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 3 -->
+        <div class="filter-item all bags add-cart-item">
+          <img src="images/bags/bag-3.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Beige Sacculi</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star-half-outline"></ion-icon>
+          <br />
+          <span class="price">$100</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+        <!-- Box 4 -->
+        <div class="filter-item all bags add-cart-item">
+          <img src="images/bags/bag-4.jpg" alt="" class="product-img" />
+          <h2 class="product-title">Flavo Pera</h2>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <ion-icon class="star" name="star"></ion-icon>
+          <br />
+          <span class="price">$90</span>
+          <i class="bx bx-shopping-bag add-cart"></i>
+        </div>
+      </div>
+    </section>
+
+    <!----BRAND--->
+    <section class="brand">
+      <div class="brand-content">
+        <div class="main">
+          <a href="https://www.mulberry.com" target="_blank"
+            ><img src="images/Brands/brand1.png"
+          /></a>
+        </div>
+
+        <div class="main">
+          <a href="https://zara.com" target="_blank">
+            <img src="images/Brands/brand2.png"
+          /></a>
+        </div>
+
+        <div class="main">
+          <a href="https://louisvuitton.com" target="_blank"
+            ><img src="images/Brands/brand3.png"
+          /></a>
+        </div>
+
+        <div class="main">
+          <a href="https://chanel.com" target="_blank"
+            ><img src="images/Brands/brand4.png"
+          /></a>
+        </div>
+
+        <div class="main">
+          <a href="https://prada.com" target="_blank"
+            ><img src="images/Brands/brand5.png"
+          /></a>
+        </div>
+
+        <div class="main">
+          <a href="https://www.gucci.com" target="_blank"
+            ><img src="images/Brands/brand6.png"
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <!----FOOTER--->
+    <section class="footer" id="footer">
+      <div class="main-footer">
+        <h2>Dazzle</h2>
+        <p>
+          Copyright © 2023 Victor Brum. <br />
+          All Rights Reserved.
+        </p>
+        <div class="icons">
+          <a href="https://instagram.com" target="_blank"
+            ><ion-icon name="logo-instagram"></ion-icon
+          ></a>
+          <a href="https://pinterest.com" target="_blank"
+            ><ion-icon name="logo-pinterest"></ion-icon
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><ion-icon name="logo-twitter"></ion-icon
+          ></a>
+        </div>
+      </div>
+
+      <div class="main-footer">
+        <h3>Explore</h3>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#new">New</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </div>
+
+      <div class="main-footer">
+        <h3>Our Services</h3>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Free Shipping</a></li>
+        <li><a href="#">Gift Cards</a></li>
+      </div>
+
+      <div class="main-footer">
+        <h3>Shopping</h3>
+        <li><a href="#">Clothing Store</a></li>
+        <li><a href="#">Trending Shoes</a></li>
+        <li><a href="#">Accessories</a></li>
+        <li><a href="#">Sale</a></li>
+      </div>
+
+      <!----Scroll Top--->
+      <a href="#" class="scroll-top"
+        ><ion-icon name="arrow-up-circle"></ion-icon
+      ></a>
+    </section>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- Link Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

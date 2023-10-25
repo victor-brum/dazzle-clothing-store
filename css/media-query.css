@@ -1,0 +1,99 @@
+@media screen and (max-width: 1317px) {
+  .circles {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1115px) {
+  .nav,
+  .login-register-btns {
+    display: none;
+  }
+
+  .home {
+    padding: 0.1rem;
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  header {
+    height: 10%;
+    padding: 0;
+  }
+
+  header a {
+    margin-left: 5%;
+  }
+
+  .mobile-btn {
+    display: flex;
+    font-size: 2.5rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu-btn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    margin-top: 4.9rem;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .nav-item a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .nav-item a:hover {
+    font-weight: 600;
+  }
+
+  .mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .mobile-login-register {
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .mobile-login-register button {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    gap: 10px;
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .featured {
+    display: none;
+  }
+}
