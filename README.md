@@ -2,7 +2,7 @@
 This is the responsive frontend of a clothing store e-commerce. Here you will find a comprehensive set of features and source code to create an attractive and user-friendly shopping experience.
 
 ## Live Preview
-[Click here!](https://brumvictor.github.io/dazzle-clothing-store/)
+[Click here!](https://victor-brum.github.io/dazzle-clothing-store/)
 
 ## Technologies
 * HTML5
